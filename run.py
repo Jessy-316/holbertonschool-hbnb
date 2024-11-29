@@ -3,7 +3,6 @@ import os
 import sqlite3
 from app import create_app, db
 
-
 def execute_script(db_path, script_path):
     """Executes a SQL script file against the SQLite database."""
     try:
@@ -18,7 +17,7 @@ def execute_script(db_path, script_path):
 def initialize_database():
     """Initializes the SQLite database by running schema and seed scripts."""
     base_dir = os.path.dirname(__file__)
-    db_path = "/Users/priscilalopez/holbertonschool-hbnb/instance/development.db"
+    db_path = "/home/franciscobaez/holbertonschool-hbnb/instance/development.db"
     scripts_path = os.path.join(base_dir, "app/persistence", "scripts.sql")
     seed_path = os.path.join(base_dir, "app/persistence", "seed.sql")
 

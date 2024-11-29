@@ -42,7 +42,7 @@ function getCookie(name) {
 // Fetch places data
 async function fetchPlaces(token) {
     try {
-        const response = await fetch('http://192.168.0.7:5050/api/v1/places/', {
+        const response = await fetch('http://127.0.0.1:5500/app/api/v1/places/', {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -66,7 +66,7 @@ async function fetchPlaces(token) {
 async function fetchPlaceDetails(token, place_id) {
     try {
         console.log(`Attempting to fetch details for place_id-plb: ${place_id}`);
-        const response = await fetch(`http://192.168.0.7:5050/api/v1/places/${place_id}`, {
+        const response = await fetch(`http://127.0.0.1:5500/app/api/v1/places/${place_id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Login user
 async function loginUser(email, password) {
     try {
-        const response = await fetch('http://192.168.0.7:5050/api/v1/auth/login', {
+        const response = await fetch('http://127.0.0.1:5500/app/api/v1/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -251,7 +251,7 @@ async function loginUser(email, password) {
 
 async function fetchUserById(token, userId) {
     try {
-        const response = await fetch(`http://192.168.0.7:5050/api/v1/users/${userId}`, {
+        const response = await fetch(`http://127.0.0.1:5500/app/api/v1/users/${userId}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,
